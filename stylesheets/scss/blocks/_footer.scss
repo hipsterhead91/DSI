@@ -1,0 +1,76 @@
+.footer {
+  width: 100%;
+  @include flex(column, center);
+}
+
+.footer__info {
+  width: 100%;
+  max-width: 1126px;
+  min-height: 188px;
+  @include flex(row, end);
+}
+
+.footer__address {
+  padding: 0 0 12px 0;
+  @include flex(column);
+
+  .footer__logo {
+    width: 120px;
+    height: 56px;
+    @include bg-image('../../../images/logo.svg', center, contain);
+  }
+
+  span:first-of-type {
+    margin: 10px 0 8px 0;
+    @extend %roboto-500;
+    font-size: 18px;
+    line-height: 116.66%;
+    color: $color-footer;
+  }
+
+  span {
+    @extend %roboto-300;
+    font-size: 18px;
+    line-height: 149.19%;
+    color: $color-footer;
+  }
+}
+
+.footer__contacts {
+  padding: 0 0 12px 48px;
+  @include flex(column);
+
+  h3 {
+    margin: 0 0 16px 0;
+    @extend %roboto-500;
+    font-size: 24px;
+    line-height: 116.66%;
+    color: $color-footer;
+  }
+
+  span {
+    @extend %roboto-300;
+    font-size: 18px;
+    line-height: 149.19%;
+    color: $color-footer;
+  }
+}
+
+.footer__copyright {
+  width: 100%;
+  height: 64px;
+  margin: 12px 0 0 0;
+  @include flex(column, center, center);
+  background-color: $color-accent;
+
+  span {
+    @extend %roboto-400;
+    font-size: 18px;
+    line-height: 116.66%;
+    color: $color-white;
+
+    span {
+      @extend %roboto-500;
+    }
+  }
+}

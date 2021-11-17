@@ -1,0 +1,53 @@
+.intro {
+  width: 100%;
+  padding: 210px 0 100px 0;
+  @include flex(column, center);
+}
+
+.intro__container {
+  width: 100%;
+  max-width: 1125px;
+  @include flex(row, center);
+}
+
+.intro__info {
+  width: 50%;
+  @include flex(column);
+
+  h1 {
+    @extend %roboto-700;
+    font-size: 48px;
+    line-height: 133.69%;
+    color: $color-heading;
+
+    span {
+      color: $color-accent;
+    }
+  }
+
+  p {
+    margin: 24px 0 24px 0;
+    @extend %roboto-400;
+    font-size: 20px;
+    line-height: 145%;
+    color: $color-text;
+  }
+
+  button {
+    width: 161px;
+    height: 53px;
+    background-color: $color-accent;
+    border-radius: 4px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+    @extend %roboto-400;
+    font-size: 20px;
+    line-height: 145%;
+    color: $color-white;
+  }
+}
+
+.intro__illustration {
+  width: 50%;
+  height: 382px;
+  object-fit: contain;
+}

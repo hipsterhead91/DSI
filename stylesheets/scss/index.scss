@@ -1,0 +1,16 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+// DEFAULT STYLES RESER
+@import '../../node_modules/normalize-scss/sass/normalize';
+@import 'custom-reset';
+
+// SCSS VARIABLES, PLACEHOLDERS, MIXINS
+@import 'base';
+
+// BLOCKS
+@import 'blocks/header';
+@import 'blocks/intro';
+@import 'blocks/about';
+@import 'blocks/products';
+@import 'blocks/footer';

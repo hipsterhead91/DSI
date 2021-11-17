@@ -1,0 +1,49 @@
+.about {
+  width: 100%;
+  padding: 60px 0 70px 0;
+  background-color: $color-background;
+  @include flex(column, center);
+}
+
+.about__container {
+  @include flex(row, center);
+}
+
+.about__info {
+  width: 100%;
+  max-width: 520px;
+  @include flex(column);
+
+  h2 {
+    @extend %roboto-500;
+    font-size: 32px;
+    line-height: 133.69%;
+    color: $color-heading;
+
+    span {
+      color: $color-accent;
+    }
+  }
+
+  p {
+    @extend %roboto-400;
+    font-size: 18px;
+    line-height: 150%;
+    color: $color-text;
+
+    &:first-of-type {
+      margin: 24px 0 24px 0;
+    }
+
+    span {
+      @extend %roboto-500;
+      color: $color-accent;
+    }
+  }
+}
+
+.about__illustration {
+  max-width: 452px;
+  margin: 0 82px 0 0;
+  object-fit: contain;
+}

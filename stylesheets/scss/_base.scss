@@ -1,0 +1,84 @@
+// VARIABLES
+
+$color-white: #FFFFFF;
+$color-background: #F7F7F7;
+$color-heading: #1F2E35;
+$color-text: #30444E;
+$color-footer: #263238;
+$color-accent: #EE4248;
+
+
+
+// PLACEHOLDERS
+
+%roboto-300 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+%roboto-400 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+%roboto-500 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+%roboto-700 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+%roboto-900 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+}
+
+
+
+// MIXINS
+
+@mixin max-width-1400 {
+  @media screen and (max-width: 1400px) { @content; }
+}
+
+@mixin max-width-1200 {
+  @media screen and (max-width: 1200px) { @content; }
+}
+
+@mixin max-width-992 {
+  @media screen and (max-width: 992px) { @content; }
+}
+
+@mixin max-width-768 {
+  @media screen and (max-width: 768px) { @content; }
+}
+
+@mixin max-width-576 {
+  @media screen and (max-width: 576px) { @content; }
+}
+
+@mixin max-width-360 {
+  @media screen and (max-width: 360px) { @content; }
+}
+
+@mixin flex($direction: row, $align: normal, $justify: start) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin bg-image($link, $position: center, $size: cover, $repeat: no-repeat) {
+  background-image: url($link);
+  background-position: $position;
+  background-size: $size;
+  background-repeat: $repeat;
+}
