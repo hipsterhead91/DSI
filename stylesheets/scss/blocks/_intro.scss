@@ -1,24 +1,85 @@
+// СЕКЦИЯ
 .intro {
   width: 100%;
-  padding: 210px 0 100px 0;
+  padding: calc(100px + 110px) 0 160px 0; // calc = высота фиксированного хедера + отступ
   @include flex(column, center);
+
+  @include max-width-1200 {
+    padding: calc(100px + 90px) 0 120px 0;
+  }
+
+  @include max-width-992 {
+    padding: calc(100px + 90px) 0 100px 0;
+  }
+
+  @include max-width-576 {
+    padding: calc(100px + 60px) 0 100px 0;
+  }
 }
 
+
+
+// ОГРАНИЧИВАЮЩИЙ КОНТЕЙНЕР
 .intro__container {
   width: 100%;
   max-width: 1125px;
   @include flex(row, center);
+
+  @include max-width-1200 {
+    max-width: calc(100% - 40px - 40px);
+  }
+
+  @include max-width-992 {
+    max-width: calc(100% - 32px - 32px);
+  }
+
+  @include max-width-768 {
+    @include flex(column-reverse, center);
+  }
+
+  @include max-width-576 {
+    max-width: calc(100% - 20px - 20px);
+  }
 }
 
+
+
+// ТЕКСТОВЫЙ БЛОК
 .intro__info {
   width: 50%;
   @include flex(column);
+
+  @include max-width-768 {
+    width: 100%;
+    @include flex(column, center);
+  }
 
   h1 {
     @extend %roboto-700;
     font-size: 48px;
     line-height: 133.69%;
     color: $color-heading;
+
+    @include max-width-1200 {
+      font-size: 40px;
+    }
+
+    @include max-width-992 {
+      font-size: 32px;
+    }
+
+    @include max-width-768 {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    @include max-width-576 {
+      font-size: 24px;
+    }
+
+    @include max-width-360 {
+      font-size: 20px;
+    }
 
     span {
       color: $color-accent;
@@ -31,6 +92,31 @@
     font-size: 20px;
     line-height: 145%;
     color: $color-text;
+
+    @include max-width-1200 {
+      max-width: 90%;
+    }
+
+    @include max-width-992 {
+      margin: 8px 0 32px 0;
+      font-size: 18px;
+    }
+
+    @include max-width-768 {
+      max-width: 80%;
+      margin: 24px 0 40px 0;
+      text-align: center;
+    }
+
+    @include max-width-576 {
+      margin: 18px 0 32px 0;
+      font-size: 16px;
+    }
+
+    @include max-width-360 {
+      max-width: 100%;
+      margin: 12px 0 24px 0;
+    }
   }
 
   button {
@@ -43,11 +129,43 @@
     font-size: 20px;
     line-height: 145%;
     color: $color-white;
+
+    @include max-width-992 {
+      width: 140px;
+      height: 40px;
+      font-size: 16px;
+    }
+
+    @include max-width-768 {
+      width: 161px;
+      height: 53px;
+      font-size: 20px;
+    }
+
+    @include max-width-360 {
+      width: 140px;
+      height: 40px;
+      font-size: 16px;
+    }
   }
 }
 
+
+
+// ИЛЛЮСТРАЦИЯ
 .intro__illustration {
   width: 50%;
-  height: 382px;
-  object-fit: contain;
+
+  @include max-width-768 {
+    width: 70%;
+    margin: 0 0 40px 0;
+  }
+
+  @include max-width-576 {
+    width: 80%;
+  }
+
+  img {
+    width: 100%;
+  }
 }

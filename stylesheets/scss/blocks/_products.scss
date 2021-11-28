@@ -1,11 +1,37 @@
+// СЕКЦИЯ
 .products {
   width: 100%;
   padding: 96px 0 88px 0;
   @include flex(column, center);
+
+  @include max-width-768 {
+    padding: 64px 0 88px 0;
+  }
+
+  @include max-width-576 {
+    padding: 52px 0 88px 0;
+  }
 }
 
+
+
+// ОГРАНИЧИВАЮЩИЙ КОНТЕЙНЕР + ЗАГОЛОВОК СЕКЦИИ
 .products__container {
+  width: 100%;
+  max-width: 1125px;
   @include flex(column, center);
+
+  @include max-width-1200 {
+    max-width: calc(100% - 40px - 40px);
+  }
+
+  @include max-width-992 {
+    max-width: calc(100% - 32px - 32px);
+  }
+
+  @include max-width-576 {
+    max-width: calc(100% - 20px - 20px);
+  }
 
   h2 {
     margin: 20px 0 18px 0;
@@ -14,25 +40,93 @@
     line-height: 133.69%;
     text-align: center;
     color: $color-heading;
+
+    @include max-width-768 {
+      margin: 20px 0 64px 0;
+      font-size: 30px;
+    }
+
+    @include max-width-576 {
+      font-size: 28px;
+    }
+
+    @include max-width-360 {
+      font-size: 24px;
+    }
   }
 }
 
+
+
+// КАРТОЧКИ
 .products__cards {
   width: 100%;
-  max-width: 1126px;
+  padding: 0 10px 0 10px;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-column-gap: 10px;
+
+  @include max-width-992 {
+    grid-column-gap: 32px;
+  }
+
+  @include max-width-768 {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 44px;
+    grid-row-gap: 60px;
+  }
+
+  @include max-width-576 {
+    padding: 0 0 0 0;
+    grid-template-columns: 1fr;
+  }
 }
 
 .products__card {
+  width: 100%;
   padding: 24px 24px 4px 24px;
+  box-sizing: border-box;
   @include flex(column, normal, space-between);
+
+  @include max-width-992 {
+    padding: 16px 0 4px 0;
+  }
+
+  @include max-width-576 {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto 0 auto;
+    padding: 32px 32px 40px 32px;
+    background-color: $color-background;
+    border-radius: 12px;
+  }
+
+  @include max-width-360 {
+    max-width: 100%;
+    padding: 32px 18px 40px 18px;
+  }
+
+  div {
+    @include max-width-576 {
+      @include flex(column, center);
+    }
+  }
 
   img {
     width: 100px;
     height: 100px;
     object-fit: contain;
+
+    @include max-width-992 {
+      width: 80px;
+      height: 80px;
+    }
+
+    @include max-width-576 {
+      width: 60px;
+      height: 60px;
+    }
   }
 
   h3 {
@@ -41,6 +135,15 @@
     font-size: 28px;
     line-height: 133.69%;
     color: $color-accent;
+
+    @include max-width-992 {
+      font-size: 24px;
+    }
+
+    @include max-width-576 {
+      font-size: 20px;
+      text-align: center;
+    }
   }
 
   p {
@@ -49,6 +152,15 @@
     font-size: 18px;
     line-height: 150%;
     color: $color-text;
+
+    @include max-width-992 {
+      font-size: 16px;
+    }
+
+    @include max-width-576 {
+      margin: 0 0 24px 0;
+      text-align: center;
+    }
   }
 
   button {
@@ -61,5 +173,13 @@
     font-size: 18px;
     line-height: 145%;
     color: $color-white;
+
+    @include max-width-992 {
+      font-size: 16px;
+    }
+
+    @include max-width-576 {
+      margin: 0 auto 0 auto;
+    }
   }
 }
